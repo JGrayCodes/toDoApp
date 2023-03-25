@@ -7,6 +7,22 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+/* Default page background to look like notepad*/
+body {
+  background-color: white;
+  /* 100% to stretch the width of the screen, 1.5em to give the writing height between the ruled lines */
+  background-size: 100% 1.5em;
+  background-image:
+      /* 0.1% width red vertical line 5% from left side to imitate notepad margin */
+      linear-gradient(90deg, transparent 5%, #dc4444ba 5%, #dc4444ba 5.1%, transparent 5.1%),
+      /* 0.1% width lighter red vertical line 5% from right side to imitate notepad margin */
+      linear-gradient(270deg, transparent 5%, #e38c8cba 5%, #e38c8cba 5.1%, transparent 5.1%),
+      /* 0.1em faded blue horizontal lines going across the screen to imitate notepad writing lines */
+      linear-gradient(#eaeffc .1em, transparent .1em);
+  /* 100% to stretch the width of the screen, 1.5em to give the writing height between the ruled lines */
+}
+
+
 /* Animation of logo follows */
 
 /* The elements to apply the animation to */
