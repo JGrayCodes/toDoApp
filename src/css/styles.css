@@ -6,3 +6,40 @@
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+/* Animation of logo follows */
+
+/* The elements to apply the animation to */
+
+.logoAnimate {
+  position: relative;
+  padding-top: 2%;
+  /* height: 10%; */
+  display: flex;
+  justify-content: center;
+}
+
+/* Code to ensure that both images are positioned one on top of the other */
+.logoAnimate img {
+  position: absolute; 
+}
+
+/* The animation code to gradually switch from the top image (starts opaque) 
+to the bottom image (when the top image is transparent) and back again */
+
+.logoAnimate img.top {
+  animation-name: logoAnimateFadeOutIn;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+@keyframes logoAnimateFadeOutIn {
+  0% {
+      opacity: 1;
+  }
+
+  50% {
+      opacity: 0;
+  }
+}
