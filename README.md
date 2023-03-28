@@ -28,6 +28,5 @@ The following is the brief that we were given:
 > • Add due dates to tasks  
 > • Sort tasks alphabetically  
 > • Strike through tasks on the list  
-> • Save tasks in their expected states and order  
->   even after the browser has been closed
+> • Save tasks in their expected states and order even after the browser has been closed
 
