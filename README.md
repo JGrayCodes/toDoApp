@@ -29,5 +29,5 @@ The following is the brief that we were given:
 > • Sort tasks alphabetically  
 > • Strike through tasks on the list  
 > • Save tasks in their expected states and order  
->  even after the browser has been closed
+>   even after the browser has been closed
 
