@@ -39,5 +39,12 @@ function createTask() {
   console.log(name);
   console.log(date);
 
-  
+  // Instantiate a new Task by using the class Task constructor
+  const newTask = new Task(name, date);
+
+  // Push this new Task into an array
+  taskArray.push(newTask);
+
+  // Log the array - check the data is in the array!
+  console.log(taskArray);
 }
