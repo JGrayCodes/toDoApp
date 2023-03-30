@@ -28,16 +28,35 @@
         <div class="jumbotron jumbotron-fluid responsive">
             <div class="container-jumbo justify-content-center align-items-center">
                 <div class="logoAnimate">
-                    <!-- Order is bottom image first then top image to work with css-->
-                    <img class="bottom" src="/src/images/toDoStrikethru.jpg"/>
-                    <img class="top" src="/src/images/toDo.jpg"/>
+                    <!-- Order is bottom image first then top image 
+                                 (goes on top of the bottom image) to work with css -->
+                    <img class="bottom" src="/src/images/toDoStrikethru.jpg" />
+                    <img class="top" src="/src/images/toDo.jpg" />
                 </div>
             </div>
         </div>
 
     </header>
 
-    </header>
+    <main>
+        <!-- Created inputs for a new task-->
+        <p>
+            <label for="taskName"> New task <span class="requiredInput"> * </span> : </label>
+            <input type="text" required name="taskName" id="taskName">
+            <span class="tooltiptext"> Required! No html characters allowed </span>
+        </p>
+
+
+        <p>
+            <label for="taskDate"> Task due date <span class="requiredInput"> * </span> : </label>
+            <input type="date" required name="taskDate" id="taskDate">
+            <span class="tooltiptext"> Required! Please select a date </span>
+        </p>
+
+        <button> Submit new Task </button>
+
+    </main>
+
 </body>
 
 </html>
