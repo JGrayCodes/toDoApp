@@ -1,3 +1,4 @@
+// Create a Task class with object constructor
 class Task {
   constructor(name, date) {
     this._taskName = name;
@@ -25,5 +26,18 @@ class Task {
   }
 }
 
+// Create an array to store all the objects
 const taskArray = [];
 
+// Create a function to instantiate a new object and add the object to an array
+function createTask() {
+  // Initialize and assign variables
+  let name = document.getElementById("taskName").value;
+  let date = document.getElementById("taskDate").value;
+
+  // Log the variables - check they're pulling through!
+  console.log(name);
+  console.log(date);
+
+  
+}
