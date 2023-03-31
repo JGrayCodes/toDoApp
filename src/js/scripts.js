@@ -148,3 +148,20 @@ function completedTask(index) {
   }
 }
 
+function editTask(index) {
+
+    const task = taskArray[index];
+    const taskName = task.getName;
+    const taskDate = task.getDate;
+  
+    // Set the taskName and taskDate input field values to those 
+    // of the task record being edited
+    document.getElementById("taskName").value = taskName;
+    document.getElementById("taskDate").value = taskDate;
+  
+    // Remove the editing task from the array
+    taskArray.splice(index, 1);
+  
+    // Call the function to display the tasks including the edited task
+    displayTasks();
+  }
