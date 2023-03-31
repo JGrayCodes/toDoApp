@@ -127,21 +127,24 @@ function displayTasks() {
 function completedTask(index) {
   const task = taskArray[index];
 
-  console.log(task.getCompleted);
+  // Use querySelectorAll() method to select all task data elements & use index
+  // parameter to select the task data element at the specified index. 
+  const taskData = document.querySelectorAll(".task-data")[index];
 
-  const taskData = document.querySelector(".task-entries");
+  // Use querySelector() method to target task name & task date elements
   const taskNameNode = taskData.querySelector(".task-name");
   const taskDateNode = taskData.querySelector(".task-date");
 
-  task.setCompleted = !task.getCompleted;
+  task.setCompleted = !task.getCompleted; // toggle true/false on click
 
   if (task.getCompleted == true) {
-    // Add a line-through style to the task name and date if the task is complete
+    // Add strike-through style to task (name & date) if task is complete
     taskNameNode.style.textDecoration = "line-through";
     taskDateNode.style.textDecoration = "line-through";
   } else {
-    // Remove a line-through style to the task name and date if the task marked as incomplete
+    // Remove strike-through from task (name & date) if task is incomplete
     taskNameNode.style.textDecoration = "none";
     taskDateNode.style.textDecoration = "none";
   }
 }
+
