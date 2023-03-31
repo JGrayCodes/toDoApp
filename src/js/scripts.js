@@ -6,24 +6,25 @@ class Task {
   }
 
   // Getter for task name
-  get taskName() {
+  get getName() {
     return this._taskName;
   }
 
   // Setter for task name
-  set taskName(name) {
+  set setName(name) {
     this._taskName = name;
   }
 
   // Getter for task date
-  get taskDate() {
+  get getDate() {
     return this._taskDate;
   }
 
   // Setter for task date
-  set taskDate(date) {
+  set setDate(date) {
     this._taskDate = date;
   }
+
 }
 
 // Create an array to store all the objects
@@ -40,11 +41,68 @@ function createTask() {
   console.log(date);
 
   // Instantiate a new Task by using the class Task constructor
-  const newTask = new Task(name, date);
+  const task = new Task(name, date);
 
   // Push this new Task into an array
-  taskArray.push(newTask);
+  taskArray.push(task);
 
   // Log the array - check the data is in the array!
   console.log(taskArray);
+
+  // Call the function to display the tasks
+  displayTasks(task);
 }
+
+// Create a function to display all of the task objects in the task array
+function displayTasks() {
+  document.getElementById("tasksDisplay").innerHTML = "";
+  for (let i = 0; i < taskArray.length; i++) {
+    console.log(i);
+
+    // create a div container for all of the entries and give it a class name
+    const taskEntries = document.createElement("div");
+    taskEntries.classList.add("task-entries"); 
+
+    // create a span for the data of one task entry & give it a class name
+    const taskData = document.createElement("span");
+    taskData.classList.add("task-data");
+
+    // Create the buttons.
+    const button1 = document.createElement("button");
+    button1.innerHTML = "Completed";
+    const button2 = document.createElement("button");
+    button2.innerHTML = "Edit";
+    const button3 = document.createElement("button");
+    button3.innerHTML = "Delete";
+
+    // Create the nodes.
+
+    // need this & next line to add a class to the created task name text node
+    const taskNode1 = document.createElement("span");
+    taskNode1.classList.add("task-name");
+    // then get and append the task name from the array
+    taskNode1.appendChild(document.createTextNode(taskArray[i].getName));
+
+    // need this & next line to add a class to the created task date text node
+    const taskNode2 = document.createElement("span");
+    taskNode2.classList.add("task-date");
+    // then get and append the task date from the array
+    taskNode2.appendChild(document.createTextNode(taskArray[i].getDate));
+
+    // Append buttons and nodes to span
+    taskData.appendChild(button1);
+    taskData.appendChild(taskNode1);
+    taskData.appendChild(taskNode2);
+    taskData.appendChild(button2);
+    taskData.appendChild(button3);
+
+    console.log(taskData);
+
+    taskEntries.appendChild(taskData);
+
+    document.getElementById("tasksDisplay").appendChild(taskEntries);
+
+    
+  }
+}
+
