@@ -8,6 +8,13 @@
 }
 
 /* Default page background to look like notepad*/
+
+/* taken from the highest scoring answer on
+   https://stackoverflow.com/questions/18183417/how-to-draw-multiple-horizontal-lines-notebook-paper-effect-using-css 
+   and amended for a greater height between the horizontal lines as well as a 
+   second lighter red line on the right side to make as if it's the underside
+   of the lined paper with the red margin on that side too!*/
+
 body {
   background-color: white;
   /* 100% to stretch the width of the screen, 1.5em to give the writing height between the ruled lines */
@@ -19,18 +26,22 @@ body {
       linear-gradient(270deg, transparent 5%, #e38c8cba 5%, #e38c8cba 5.1%, transparent 5.1%),
       /* 0.1em faded blue horizontal lines going across the screen to imitate notepad writing lines */
       linear-gradient(#eaeffc .1em, transparent .1em);
-  /* 100% to stretch the width of the screen, 1.5em to give the writing height between the ruled lines */
 }
 
 
-/* Animation of logo follows */
+/* Animation of To-Do app logo follows */
+
+/* taken from the highest scoring answer on
+   https://stackoverflow.com/questions/18183417/how-to-draw-multiple-horizontal-lines-notebook-paper-effect-using-css 
+
 
 /* The elements to apply the animation to */
 
 .logoAnimate {
   position: relative;
   padding-top: 2%;
-  /* height: 10%; */
+  /* padding-bottom: 2em; */ /* <-- might need to add this for later when adding the styling for the input window*/
+  height: 10%;
   display: flex;
   justify-content: center;
 }
@@ -59,3 +70,4 @@ to the bottom image (when the top image is transparent) and back again */
       opacity: 0;
   }
 }
+
