@@ -3,6 +3,7 @@ class Task {
   constructor(name, date) {
     this._taskName = name;
     this._taskDate = date;
+    this._completed = false;
   }
 
   // Getter for task name
@@ -25,6 +26,15 @@ class Task {
     this._taskDate = date;
   }
 
+  // Getter for completed toggle
+  get getCompleted() {
+    return this._completed;
+  }
+
+  // Setter for completed toggle
+  set setCompleted(completed) {
+    this._completed = completed;
+  }
 }
 
 // Create an array to store all the objects
@@ -61,7 +71,7 @@ function displayTasks() {
 
     // create a div container for all of the entries and give it a class name
     const taskEntries = document.createElement("div");
-    taskEntries.classList.add("task-entries"); 
+    taskEntries.classList.add("task-entries");
 
     // create a span for the data of one task entry & give it a class name
     const taskData = document.createElement("span");
@@ -114,3 +124,24 @@ function displayTasks() {
   }
 }
 
+function completedTask(index) {
+  const task = taskArray[index];
+
+  console.log(task.getCompleted);
+
+  const taskData = document.querySelector(".task-entries");
+  const taskNameNode = taskData.querySelector(".task-name");
+  const taskDateNode = taskData.querySelector(".task-date");
+
+  task.setCompleted = !task.getCompleted;
+
+  if (task.getCompleted == true) {
+    // Add a line-through style to the task name and date if the task is complete
+    taskNameNode.style.textDecoration = "line-through";
+    taskDateNode.style.textDecoration = "line-through";
+  } else {
+    // Remove a line-through style to the task name and date if the task marked as incomplete
+    taskNameNode.style.textDecoration = "none";
+    taskDateNode.style.textDecoration = "none";
+  }
+}
