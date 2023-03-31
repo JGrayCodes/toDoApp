@@ -102,7 +102,15 @@ function displayTasks() {
 
     document.getElementById("tasksDisplay").appendChild(taskEntries);
 
-    
+    button1.addEventListener("click", function () {
+      completedTask(i);
+    });
+    button2.addEventListener("click", function () {
+      editTask(i);
+    });
+    button3.addEventListener("click", function () {
+      deleteTask(i);
+    });
   }
 }
 
